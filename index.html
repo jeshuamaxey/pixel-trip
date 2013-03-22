@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Element Experiments</title>
+	<!-- CSS -->
+	<link href="./style/style.css" rel="stylesheet" type="text/css" />
+	<link href="./style/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<!-- javascript -->
+	<script src="./js/jquery.js" type="text/javascript"></script>
+	<script src="./js/jquery-ui.js" type="text/javascript"></script>
+	<script src="./js/processing.js" type="text/javascript"></script>
+	<script src="./js/script.js" type="text/javascript"></script>
+</head>
+<body class="dialog-open">
+	<ul id="hint-container">
+		<li id="hint-one" class="hint whiteStyle centre-hint">
+			This app requires a modern web browser and for JavaScript to be enabled to work properly
+		</li><!-- #hint-one -->
+		<li id="hint-three" class="hint whiteStyle">
+			Use this slider to control the refresh rate of the pixel grid
+		</li><!-- #hint-three -->
+		<li id="hint-two" class="hint whiteStyle centre-hint warning">
+			BE ADVISED, although at its lowest speed setting (the default) this app may be enjoyed by everyone, those with photosensitive epilepsy are warned not to turn the frequecy all the way up.
+		</li><!-- #hint-two -->
+		<li id="hint-four" class="hint whiteStyle">
+			The control buttons are very self-explanatory, punch away and see what each does.
+		</li><!-- #hint-four -->
+	</ul><!-- #hints -->
+	<div id="primary">
+		<h1 class="whiteStyle">Trippy Pixel Show</h1>
+		<section id="app">
+
+			<div id="all-sliders">
+
+				<div id="freq-slider-container" class="slide-container">
+					<div id="freq-slider" class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+						<div class="ui-slider-range ui-widget-header ui-slider-range-min" style="height: 49%;"></div>
+						<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="bottom: 0%;"></a>
+						<div class="ui-slider-range ui-widget-header ui-slider-range-min" style="height: 0%;"></div>
+					</div><!-- #freq-slider -->
+				<div id="freq-amount" class="sliderIndicator whiteStyle">1</div>
+				</div><!-- .slide-container -->
+
+				<div id="pixel-slider-container" class="slide-container">
+					<div id="pixel-slider" class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+						<div class="ui-slider-range ui-widget-header ui-slider-range-min" style="height: 49%;"></div>
+						<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="bottom: 0%;"></a>
+					<div class="ui-slider-range ui-widget-header ui-slider-range-min" style="height: 0%;"></div>
+				</div><!-- #pixel-slider-container -->
+				<div id="pixel-amount" class="sliderIndicator whiteStyle">10</div>
+				</div><!-- .slide-container -->
+
+			</div><!-- all-sliders -->
+
+			<div id="canvasContainer">
+				<canvas id="theCanvas" class="aCanvas" width="500" height="500">
+					<p>
+						I'm afriad your current browser doesn't support the HTLM5 canvas element. I recommend downloading a more modern browser such as <a href="https://www.google.com/intl/en/chrome/browser/">Google Chrome</a>, <a href="http://www.mozilla.org/en-US/">Firefox</a> or <a href="http://www.apple.com/safari/">Safari.</a>
+					</p>
+				</canvas>
+			</div><!-- #canvasContainer -->
+			<div id="control-wrapper">
+				<div id="control-nav-left" class="controlButton control-nav whiteStyle"></div>
+<!--				<div class="table-wrapper">	-->
+					<div id="control-panel" class="table">
+						<ul class="controls current-controls">
+							<li id="start" class="controlButton whiteStyle">Start</li>
+							<li id="pause" class="controlButton whiteStyle">Pause</li>
+							<li id="stop" class="controlButton whiteStyle">Stop</li>
+							<li id="reset" class="controlButton whiteStyle">Reset</li>
+							<li id="about" class="controlButton whiteStyle">About</li>
+							<li id="help" class="controlButton whiteStyle">Help</li>
+						</ul><!-- .controls -->
+						<ul class="controls ">
+							<li id="testone" class="controlButton whiteStyle">one</li>
+							<li id="testtwo" class="controlButton whiteStyle">two</li>
+							<li id="testthree" class="controlButton whiteStyle">three</li>
+						</ul><!-- .controls -->
+						<ul class="controls ">
+							<li id="testfour" class="controlButton whiteStyle">four</li>
+							<li id="testfive" class="controlButton whiteStyle">five</li>
+							<li id="testsix" class="controlButton whiteStyle">six</li>
+						</ul><!-- .controls -->
+					</div><!-- .table -->
+<!--				</div><!-- .table-wrapper -->
+				</div><!-- #control-box -->
+				<div id="control-nav-right" class="controlButton control-nav whiteStyle"></div>
+		</section><!-- #container -->
+		<section id="explanation" class="infobox whiteStyle">
+			<h2>What Is This?</h2>
+			<p>
+				This is an active work-in-progress. I just wanted to build myself a sandbox to learn some more about the exciing new HTML5 <span class="code">&lt;canvas&gt;</span> element. I will try never to remove any functionality as I hack away at it, though I can't envision any scenario when you really need to trip out to some pretty colours (not that it's not great fun).
+			</p>
+			<p>
+				I will one day blog about all this. Until then, the rest of my blog is <a href="http://www.jeshuamaxey.com/blog">here</a>.
+			</p>
+		</section><!-- #infobox -->
+		<section id="whats-next" class="infobox whiteStyle">
+			<h2>What's Next</h2>
+			<p>
+				Ideas to be added at a later date. I'm open to suggestions:
+			</p>
+			<ul>
+				<li>Frequency Input - both numerical and 'tap the beat' input</li>
+				<li>Frequency Output - yeah the 1-100 scale is isn't in hertz, and for that I apologise</li>
+				<li>Pixel size - include a slider to vary the sixe of the pixels</li>
+			</ul>
+		</section><!-- #infobox -->
+		<section id="source" class="infobox whiteStyle">
+			<h2>The Source</h2>
+			<p>
+				I'll be the first to admit that this isn't the most innovative app ever. What it is is a neat little example of what you can do with a couple of loops and the most basic knowledge about the HTML5 <span class="code">&lt;canvas&gt;</span> element (and trusty Javascript).
+			</p>
+			<p>
+				I've you'd like to take is as a starting point for an application you have in mind, click <a href="#">this here download link</a> and let me know what use you put it too.
+			</p>
+		</section><!-- #source -->
+		<section id="credits" class="infobox whiteStyle">
+			<h2>Credit Where Credit's Due</h2>
+			<p>
+				No web project ever fails to borrow from others, and that's the way it should be. Below are links to sites which helped me along when building this app.
+				<ul class="credits">
+					<li><a href="http://www.subtlepatterns.com">Subtle Patterns</a> - an invaluable goto for great looking textures</li>
+					<li><a href="http://www.designbolts.com/2012/09/09/20-free-retro-style-social-media-icons-set-256-x-256-png/">Design Bolts</a> - the source of the lush retro social badgers at the footer of this page</li>
+					<li><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a> - the tutorials here have taught me more than most school teachers ever did</li>
+					<li><a href="http://jqueryui.com/">jQuery UI</a> - I have this to thank for the slick navigation and UI</li>
+				</ul>
+			</p>
+		</section><!-- #credits -->
+		<footer class="infobox whiteStyle">
+			<div class="table">
+				<ul class="social-links">
+					<li><a href="https://plus.google.com/u/0/101396522412561736739/posts"><img src="./images/social-icons/56/Google+.png" /></a></li>
+					<li><a href="http://www.twitter.com/jeshuamaxey"><img src="./images/social-icons/56/Twitter.png" /></a></li>
+					<li><a href="https://www.facebook.com/jeshuamaxey"><img src="./images/social-icons/56/Facebook.png" /></a></li>
+					<li><a href="https://www.youtube.com/jeshuamaxey"><img src="./images/social-icons/56/Youtube.png" /></a></li>
+					<li><a href="http://www.jeshuamaxey.com/blog"><img src="./images/social-icons/56/RSS.png" /></a></li>
+				</ul>
+			</div>
+		</footer>
+	</div><!-- #primary -->
+</body>
+</html>
